@@ -3,545 +3,1573 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kenward Reid - Expert Remodeling & Handyman Services</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kenward Handyman &amp; Remodeling LLC | Kansas City Home Repair</title>
+    <meta name="description"
+        content="Kenward Handyman &amp; Remodeling LLC: painting, kitchen and bathroom remodels, finished basements, fences, and custom carpentry across the Kansas City metro. Call (816) 645-8036 for a free estimate.">
+    <link rel="canonical" href="https://www.kenwardreid.com/">
+    <meta name="theme-color" content="#0B0D0F">
+    <meta name="color-scheme" content="dark">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Kenward Handyman &amp; Remodeling LLC">
+    <meta property="og:title" content="Kenward Handyman &amp; Remodeling LLC | Kansas City Home Repair">
+    <meta property="og:description"
+        content="Painting, kitchen and bathroom remodels, finished basements, fences, and custom carpentry across the Kansas City metro.">
+    <meta property="og:url" content="https://www.kenwardreid.com/">
+    <meta property="og:image" content="https://www.kenwardreid.com/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="favicon.png" type="image/png" sizes="512x512">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="preload" as="image" href="after1.JPEG" fetchpriority="high">
+
     <style>
+        /* ============================================================
+           Kenward Handyman & Remodeling — dark-first brand system.
+           The logo's lime (#84FF00) and cyan (#64DEF6) measure 1.3:1
+           and 1.6:1 on white, so they can only carry weight on a dark
+           base. Everything below is built around that constraint.
+           ============================================================ */
+        :root {
+            color-scheme: dark;
+
+            --lime: #84ff00;
+            --cyan: #64def6;
+            --sky: #a6d9f6;
+            --brand-grad: linear-gradient(100deg, var(--lime) 0%, var(--cyan) 62%, var(--sky) 100%);
+
+            --bg: #0b0d0f;
+            --surface: #12151a;
+            --surface-2: #171b21;
+            --surface-3: #1d2229;
+            --line: #262c35;
+            --line-strong: #333a45;
+
+            --ink: #f2f5f8;
+            --ink-soft: #a8b2bd;
+            --ink-faint: #7c8794;
+            --on-brand: #080a0c;
+
+            --ring: var(--cyan);
+
+            --radius: 14px;
+            --radius-lg: 20px;
+
+            --measure: 68ch;
+            --gutter: clamp(1.25rem, 4vw, 3rem);
+            --section-y: clamp(4rem, 9vw, 7.5rem);
+
+            --step--1: clamp(.875rem, .84rem + .18vw, .95rem);
+            --step-0: clamp(1rem, .96rem + .2vw, 1.0625rem);
+            --step-1: clamp(1.125rem, 1.05rem + .38vw, 1.3125rem);
+            --step-2: clamp(1.375rem, 1.22rem + .74vw, 1.875rem);
+            --step-3: clamp(1.75rem, 1.44rem + 1.5vw, 2.75rem);
+            --step-4: clamp(2.25rem, 1.6rem + 3.1vw, 4.25rem);
+
+            --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        /* ---------- Reset ---------- */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        * {
+            margin: 0;
+        }
+
+        html {
+            -webkit-text-size-adjust: 100%;
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            html {
+                scroll-behavior: smooth;
+            }
+        }
+
         body {
-            font-family: 'Roboto', sans-serif;
-            color: #333;
+            font-family: var(--font);
+            font-size: var(--step-0);
             line-height: 1.6;
+            color: var(--ink);
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
-        .header {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('header-bg.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 100px 0;
-            text-align: center;
+        img,
+        svg {
+            display: block;
+            max-width: 100%;
         }
 
-        .header h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
+        img {
+            height: auto;
         }
 
-        .header p {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
+        h1,
+        h2,
+        h3 {
+            line-height: 1.14;
+            letter-spacing: -.025em;
+            text-wrap: balance;
+            font-weight: 800;
         }
 
-        .btn-custom {
-            background-color: #FF6B6B;
-            color: white;
-            padding: 12px 30px;
-            font-size: 1.1rem;
-            border: none;
-            transition: all 0.3s ease;
+        p {
+            text-wrap: pretty;
         }
 
-        .btn-custom:hover {
-            background-color: #FF8E8E;
-            transform: translateY(-3px);
+        a {
+            color: inherit;
         }
 
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 50px;
-            text-align: center;
+        :where(a, button, input, [tabindex]):focus-visible {
+            outline: 2px solid var(--ring);
+            outline-offset: 3px;
+            border-radius: 4px;
         }
 
-        .service-card {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            margin-bottom: 30px;
-            transition: all 0.3s ease;
+        ::selection {
+            background: var(--lime);
+            color: var(--on-brand);
         }
 
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        /* ---------- Layout ---------- */
+        .wrap {
+            width: min(100% - var(--gutter) * 2, 1180px);
+            margin-inline: auto;
         }
 
-        .service-card i {
-            font-size: 3rem;
-            color: #FF6B6B;
-            margin-bottom: 20px;
-        }
-
-        .carousel-control-prev,
-        .carousel-control-next {
-            width: 5%;
-        }
-
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 50%;
-            padding: 10px;
-        }
-
-        .star-rating {
-            color: #ffc107;
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-
-        .testimonial {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #f8f9fa;
-            border-radius: 10px;
-            padding: 30px;
-        }
-
-        .cta-section {
-            background-color: #FF6B6B;
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .team-section {
-            background-color: #f8f9fa;
-            padding: 80px 0;
-        }
-
-        .team-member {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .team-member img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            margin-bottom: 15px;
-        }
-
-        .team-member h4 {
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
-
-        .team-member p {
-            font-size: 1rem;
-            color: #777;
-        }
-
-        .footer {
-            background-color: #333;
-            color: white;
-            padding: 50px 0;
-        }
-
-        .social-icons a {
-            color: white;
-            font-size: 1.5rem;
-            margin-right: 15px;
-        }
-
-        .navbar-brand img {
-            max-height: 50px;
-        }
-
-        .navbar-toggler-icon {
-            background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba(255, 255, 255, 1)" stroke-width="2" d="M5 7h20M5 15h20M5 23h20"/%3E%3C/svg%3E');
-        }
-        
-        .before-after-card {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        
-        .before-after-card h3 {
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-        
-        .before-after-slider {
+        .section {
             position: relative;
-            overflow: hidden;
-            height: 300px;
-            border-radius: 10px;
+            padding-block: var(--section-y);
         }
-        
-        .before-after-slider img {
+
+        .section--raised {
+            background: var(--surface);
+            border-block: 1px solid var(--line);
+        }
+
+        .section__head {
+            max-width: var(--measure);
+            margin-bottom: clamp(2.25rem, 4.5vw, 3.5rem);
+        }
+
+        .section__head--center {
+            margin-inline: auto;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: var(--step-3);
+        }
+
+        .eyebrow {
+            display: inline-block;
+            font-size: var(--step--1);
+            font-weight: 700;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            margin-bottom: .875rem;
+            /* Two stops, not three: on a short word like "About" the full
+               lime->cyan->sky ramp compresses and only the pale tail shows. */
+            background: linear-gradient(100deg, var(--lime), var(--cyan));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Fallback for engines without background-clip:text */
+        @supports not ((background-clip: text) or (-webkit-background-clip: text)) {
+            .eyebrow {
+                color: var(--lime);
+            }
+        }
+
+        .lede {
+            font-size: var(--step-1);
+            color: var(--ink-soft);
+            margin-top: 1.125rem;
+        }
+
+        .grid {
+            display: grid;
+            gap: clamp(1rem, 2.5vw, 1.75rem);
+        }
+
+        .grid--3 {
+            grid-template-columns: repeat(auto-fit, minmax(clamp(15rem, 28vw, 20rem), 1fr));
+        }
+
+        .grid--2 {
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+        }
+
+        .visually-hidden {
             position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip-path: inset(50%);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .skip-link {
+            position: absolute;
+            left: 1rem;
+            top: -4rem;
+            z-index: 100;
+            padding: .75rem 1.25rem;
+            background: var(--lime);
+            color: var(--on-brand);
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 0 0 var(--radius) var(--radius);
+            transition: top .15s ease;
+        }
+
+        .skip-link:focus {
             top: 0;
-            left: 0;
+        }
+
+        /* ---------- Aura: soft brand glows behind content ---------- */
+        .aura {
+            position: absolute;
+            z-index: 0;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: .16;
+            pointer-events: none;
+        }
+
+        .aura--lime {
+            background: var(--lime);
+        }
+
+        .aura--cyan {
+            background: var(--cyan);
+        }
+
+        /* ---------- Buttons ---------- */
+        .btn {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: .625rem;
+            padding: .875rem 1.625rem;
+            min-height: 48px;
+            font: inherit;
+            font-weight: 700;
+            text-decoration: none;
+            border: 1px solid transparent;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease, border-color .18s ease, color .18s ease;
+        }
+
+        .btn svg {
+            width: 1.15em;
+            height: 1.15em;
+            flex: none;
+        }
+
+        .btn--primary {
+            background: var(--brand-grad);
+            color: var(--on-brand);
+            box-shadow: 0 0 0 1px rgb(132 255 0 / .35), 0 8px 28px -8px rgb(132 255 0 / .5);
+        }
+
+        .btn--primary:hover {
+            box-shadow: 0 0 0 1px rgb(132 255 0 / .5), 0 12px 34px -8px rgb(132 255 0 / .7);
+        }
+
+        .btn--outline {
+            border-color: var(--line-strong);
+            color: var(--ink);
+            background: rgb(255 255 255 / .02);
+        }
+
+        .btn--outline:hover {
+            border-color: var(--cyan);
+            color: var(--cyan);
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .btn:hover {
+                transform: translateY(-2px);
+            }
+        }
+
+        .btn-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .875rem;
+        }
+
+        .btn-row--center {
+            justify-content: center;
+        }
+
+        /* ---------- Nav ---------- */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgb(11 13 15 / .82);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .nav__bar {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            min-height: 72px;
+        }
+
+        .nav__brand {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            text-decoration: none;
+            margin-right: auto;
+        }
+
+        .nav__brand img {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            border: 1px solid var(--line);
+        }
+
+        .nav__brand b {
+            display: block;
+            font-size: 1.0625rem;
+            font-weight: 800;
+            letter-spacing: .02em;
+            line-height: 1.1;
+        }
+
+        .nav__brand small {
+            display: block;
+            font-size: .625rem;
+            font-weight: 700;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--ink-faint);
+        }
+
+        .nav__toggle {
+            display: grid;
+            place-items: center;
+            width: 44px;
+            height: 44px;
+            background: none;
+            border: 1px solid var(--line-strong);
+            border-radius: 10px;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        .nav__toggle svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .nav__toggle[aria-expanded="true"] .i-open,
+        .nav__toggle[aria-expanded="false"] .i-close {
+            display: none;
+        }
+
+        .nav__menu {
+            display: flex;
+            align-items: center;
+            gap: .25rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .nav__menu a:not(.btn) {
+            display: block;
+            padding: .625rem .875rem;
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--ink-soft);
+            border-radius: 8px;
+        }
+
+        .nav__menu a:not(.btn):hover {
+            color: var(--ink);
+            background: var(--surface-2);
+        }
+
+        .nav__menu .btn {
+            margin-left: .5rem;
+            padding: .625rem 1.25rem;
+            min-height: 44px;
+        }
+
+        @media (width < 64rem) {
+            .nav__menu {
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                gap: .25rem;
+                padding: .5rem 0 1rem;
+                border-top: 1px solid var(--line);
+            }
+
+            .nav__menu[data-open] {
+                display: flex;
+            }
+
+            .nav__menu .btn {
+                margin: .5rem 0 0;
+            }
+        }
+
+        @media (width >=64rem) {
+            .nav__toggle {
+                display: none;
+            }
+        }
+
+        /* ---------- Hero ---------- */
+        .hero {
+            position: relative;
+            display: grid;
+            align-items: center;
+            min-height: clamp(30rem, 78vh, 44rem);
+            padding-block: var(--section-y);
+            isolation: isolate;
+            overflow: hidden;
+        }
+
+        .hero__bg {
+            position: absolute;
+            inset: 0;
+            z-index: -3;
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-        
-        button.btn-secondary {
-            background-color: #6c757d;
-            border: none;
-            padding: 10px 20px;
-            color: white;
-            cursor: pointer;
-        }
-        
-        button.btn-secondary:hover {
-            background-color: #5a6268;
+            opacity: .3;
         }
 
+        /* Layered wash: kills photo contrast so text stays legible, and
+           bleeds brand color in from the edges for the glow. */
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+            background:
+                linear-gradient(105deg, var(--bg) 12%, rgb(11 13 15 / .84) 48%, rgb(11 13 15 / .55) 100%),
+                linear-gradient(to top, var(--bg) 2%, transparent 55%);
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background:
+                radial-gradient(38rem 26rem at 88% 18%, rgb(100 222 246 / .2), transparent 70%),
+                radial-gradient(32rem 24rem at 6% 96%, rgb(132 255 0 / .16), transparent 70%);
+        }
+
+        .hero__inner {
+            position: relative;
+            z-index: 1;
+            max-width: 46rem;
+        }
+
+        .hero h1 {
+            font-size: var(--step-4);
+            margin-bottom: 1.375rem;
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            background: var(--brand-grad);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        @supports not ((background-clip: text) or (-webkit-background-clip: text)) {
+            .hero h1 em {
+                color: var(--lime);
+            }
+        }
+
+        .hero__sub {
+            font-size: var(--step-1);
+            color: var(--ink-soft);
+            max-width: 40rem;
+            margin-bottom: 2.25rem;
+        }
+
+        .hero .btn-row {
+            margin-bottom: 1.75rem;
+        }
+
+        .hero__note {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .35rem 1.25rem;
+            font-size: var(--step--1);
+            color: var(--ink-faint);
+            list-style: none;
+            padding: 0;
+        }
+
+        .hero__note li {
+            display: flex;
+            align-items: center;
+            gap: .45rem;
+        }
+
+        .hero__note svg {
+            width: 1em;
+            height: 1em;
+            color: var(--lime);
+            flex: none;
+        }
+
+        /* ---------- Trust strip ---------- */
+        .trust {
+            position: relative;
+            background: var(--surface);
+            border-block: 1px solid var(--line);
+            padding-block: 1.375rem;
+        }
+
+        .trust ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: .875rem clamp(1.5rem, 5vw, 4rem);
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: var(--step--1);
+            font-weight: 600;
+            color: var(--ink-soft);
+        }
+
+        .trust li {
+            display: flex;
+            align-items: center;
+            gap: .55rem;
+        }
+
+        .trust svg {
+            width: 1.2em;
+            height: 1.2em;
+            color: var(--cyan);
+            flex: none;
+        }
+
+        /* ---------- Cards ---------- */
+        .card {
+            position: relative;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            padding: clamp(1.5rem, 3vw, 2.125rem);
+            transition: border-color .22s ease, transform .22s ease, background-color .22s ease;
+        }
+
+        .service:hover {
+            border-color: color-mix(in srgb, var(--cyan) 45%, var(--line));
+            background: var(--surface-2);
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .service:hover {
+                transform: translateY(-4px);
+            }
+        }
+
+        .service__icon {
+            display: grid;
+            place-items: center;
+            width: 54px;
+            height: 54px;
+            margin-bottom: 1.25rem;
+            border-radius: 15px;
+            background: linear-gradient(140deg, rgb(132 255 0 / .16), rgb(100 222 246 / .14));
+            border: 1px solid rgb(255 255 255 / .07);
+            color: var(--lime);
+        }
+
+        .service__icon svg {
+            width: 26px;
+            height: 26px;
+        }
+
+        .service h3 {
+            font-size: var(--step-1);
+            margin-bottom: .625rem;
+        }
+
+        .service p {
+            color: var(--ink-soft);
+            font-size: var(--step--1);
+        }
+
+        /* ---------- Before / after ---------- */
+        .ba {
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            background: var(--surface);
+            overflow: hidden;
+        }
+
+        .ba__figure {
+            position: relative;
+            aspect-ratio: 4 / 3;
+            margin: 0;
+            background: var(--surface-3);
+            touch-action: pan-y;
+            user-select: none;
+        }
+
+        .ba__figure img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+        }
+
+        .ba__after {
+            clip-path: inset(0 0 0 var(--pos, 50%));
+        }
+
+        .ba__tag {
+            position: absolute;
+            bottom: .75rem;
+            padding: .3rem .75rem;
+            font-size: .7rem;
+            font-weight: 800;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--ink);
+            background: rgb(11 13 15 / .78);
+            border: 1px solid rgb(255 255 255 / .12);
+            border-radius: 999px;
+            pointer-events: none;
+        }
+
+        .ba__tag--before {
+            left: .75rem;
+        }
+
+        .ba__tag--after {
+            right: .75rem;
+            color: var(--on-brand);
+            background: var(--lime);
+            border-color: transparent;
+        }
+
+        .ba__handle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: var(--pos, 50%);
+            width: 2px;
+            margin-left: -1px;
+            background: var(--brand-grad);
+            box-shadow: 0 0 14px rgb(132 255 0 / .55);
+            pointer-events: none;
+        }
+
+        .ba__handle::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 44px;
+            height: 44px;
+            translate: -50% -50%;
+            background: var(--bg) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%2384ff00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6M9 6l6 6-6 6"/></svg>') center / 22px no-repeat;
+            border: 1px solid rgb(132 255 0 / .5);
+            border-radius: 50%;
+            box-shadow: 0 0 18px rgb(132 255 0 / .35);
+        }
+
+        /* The range input is the real control, so pointer drag, keyboard,
+           and screen readers all work without custom a11y plumbing. */
+        .ba__range {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            appearance: none;
+            background: none;
+            cursor: ew-resize;
+        }
+
+        .ba__range::-webkit-slider-thumb {
+            appearance: none;
+            width: 44px;
+            height: 100%;
+            background: none;
+            cursor: ew-resize;
+        }
+
+        .ba__range::-moz-range-thumb {
+            width: 44px;
+            height: 100%;
+            border: 0;
+            background: none;
+            cursor: ew-resize;
+        }
+
+        .ba__range:focus-visible {
+            outline: 2px solid var(--ring);
+            outline-offset: -4px;
+        }
+
+        .ba__caption {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: .5rem;
+            padding: 1.125rem clamp(1.125rem, 2.5vw, 1.5rem) 1.25rem;
+            border-top: 1px solid var(--line);
+        }
+
+        .ba__caption h3 {
+            font-size: var(--step-1);
+        }
+
+        .ba__caption span {
+            font-size: var(--step--1);
+            color: var(--ink-faint);
+        }
+
+        /* ---------- Gallery ---------- */
+        .gallery {
+            display: grid;
+            gap: clamp(1rem, 2.5vw, 1.5rem);
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+        }
+
+        .gallery figure {
+            margin: 0;
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            background: var(--surface);
+            transition: border-color .22s ease;
+        }
+
+        .gallery figure:hover {
+            border-color: color-mix(in srgb, var(--cyan) 45%, var(--line));
+        }
+
+        .gallery img {
+            aspect-ratio: 3 / 4;
+            width: 100%;
+            object-fit: cover;
+            transition: scale .4s ease;
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .gallery figure:hover img {
+                scale: 1.04;
+            }
+        }
+
+        .gallery figcaption {
+            padding: .9rem 1.125rem 1.125rem;
+            font-size: var(--step--1);
+            font-weight: 600;
+            color: var(--ink-soft);
+            border-top: 1px solid var(--line);
+        }
+
+        /* ---------- Reviews ---------- */
+        .review {
+            display: flex;
+            flex-direction: column;
+            gap: 1.125rem;
+        }
+
+        .stars {
+            display: flex;
+            gap: .15rem;
+            color: var(--lime);
+        }
+
+        .stars svg {
+            width: 1.05rem;
+            height: 1.05rem;
+        }
+
+        .review blockquote {
+            margin: 0;
+            color: var(--ink-soft);
+        }
+
+        .review blockquote p::before {
+            content: "\201C";
+        }
+
+        .review blockquote p::after {
+            content: "\201D";
+        }
+
+        .review footer {
+            margin-top: auto;
+            font-size: var(--step--1);
+        }
+
+        .review cite {
+            display: block;
+            font-style: normal;
+            font-weight: 700;
+            color: var(--ink);
+        }
+
+        .review time {
+            color: var(--ink-faint);
+        }
+
+        /* ---------- About ---------- */
+        .about {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: center;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+        }
+
+        .about__logo {
+            justify-self: center;
+            width: min(100%, 26rem);
+            padding: clamp(1.5rem, 4vw, 2.5rem);
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+        }
+
+        .about h2 {
+            margin-bottom: 1.25rem;
+        }
+
+        /* :not(.eyebrow) — a bare `.about p` outranks `.eyebrow` and would
+           repaint the gradient label in body text color. */
+        .about p:not(.eyebrow) {
+            color: var(--ink-soft);
+        }
+
+        .about p+p {
+            margin-top: 1rem;
+        }
+
+        /* ---------- CTA ---------- */
+        .cta {
+            position: relative;
+            overflow: hidden;
+            border-block: 1px solid var(--line);
+            background: var(--surface);
+            text-align: center;
+            padding-block: clamp(3.5rem, 8vw, 5.5rem);
+        }
+
+        .cta__inner {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta h2 {
+            margin-bottom: 1.125rem;
+        }
+
+        .cta p:not(.eyebrow) {
+            max-width: 42rem;
+            margin: 0 auto 2.25rem;
+            font-size: var(--step-1);
+            color: var(--ink-soft);
+        }
+
+        /* ---------- Footer ---------- */
+        .footer {
+            background: var(--bg);
+            border-top: 1px solid var(--line);
+            padding-block: clamp(2.75rem, 5vw, 3.75rem);
+        }
+
+        .footer__top {
+            display: grid;
+            gap: 2.25rem;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+            padding-bottom: 2.25rem;
+        }
+
+        .footer h2 {
+            font-size: var(--step--1);
+            font-weight: 700;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            color: var(--ink-faint);
+            margin-bottom: 1rem;
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            gap: .55rem;
+            color: var(--ink-soft);
+        }
+
+        .footer a {
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--ink);
+        }
+
+        .footer a:hover {
+            color: var(--cyan);
+        }
+
+        .footer__brand img {
+            width: min(100%, 15rem);
+            margin-bottom: 1rem;
+        }
+
+        .footer__brand p {
+            font-size: var(--step--1);
+            color: var(--ink-faint);
+            max-width: 30ch;
+        }
+
+        .footer__bottom {
+            border-top: 1px solid var(--line);
+            padding-top: 1.5rem;
+            font-size: var(--step--1);
+            color: var(--ink-faint);
+        }
     </style>
 </head>
 
 <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="Handyman.jpg" alt="Kenward Reid Logo">
+    <nav class="nav" aria-label="Main">
+        <div class="wrap nav__bar">
+            <a class="nav__brand" href="#top" aria-label="Kenward Handyman and Remodeling LLC, home">
+                <img src="favicon.png" alt="" width="512" height="512">
+                <span>
+                    <b>KENWARD</b>
+                    <small>Handyman &amp; Remodeling</small>
+                </span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+
+            <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+                <svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" aria-hidden="true">
+                    <path d="M4 7h16M4 12h16M4 17h16" />
+                </svg>
+                <svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" aria-hidden="true">
+                    <path d="M6 6l12 12M18 6L6 18" />
+                </svg>
+                <span class="visually-hidden">Toggle navigation</span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#testimonials">Testimonials</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#team">Team</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
+
+            <ul class="nav__menu" id="nav-menu">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#transformations">Before &amp; After</a></li>
+                <li><a href="#work">Our Work</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#about">About</a></li>
+                <li>
+                    <a class="btn btn--primary" href="tel:+18166458036">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path
+                                d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2Z" />
+                        </svg>
+                        (816) 645-8036
+                    </a>
+                </li>
+            </ul>
         </div>
     </nav>
 
-    
-    <header class="header">
-        <div class="container">
-            <h1>Kenward Reid</h1>
-            <p>Transform Your Home with Expert Remodeling & Repair Services</p>
-            <p class="info">
-                At Kenward Reid, we pride ourselves on delivering top-notch remodeling and handyman services.
-                Our projects range from full home renovations to specific kitchen and bathroom upgrades.
-                We’re known for our reliability, effectiveness, and professionalism, ensuring that every job
-                is completed to the highest standard.
-            </p>            <a href="#contact" class="btn btn-custom btn-lg">Get a Free Quote</a>
-        </div>
-    </header>
-    
-    <!-- Services Section -->
-    <section id="services" class="services py-5">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="service-card text-center">
-                        <i class="fas fa-paint-roller"></i>
-                        <h3>Interior & Exterior Painting</h3>
-                        <p>Complete home makeovers tailored to your style and needs.</p>
+    <main id="main">
+        <header class="hero" id="top">
+            <img class="hero__bg" src="after1.JPEG" alt="" width="640" height="480" fetchpriority="high">
+            <div class="wrap">
+                <div class="hero__inner">
+                    <p class="eyebrow">Kansas City Metro</p>
+                    <h1>Done right the first time, <em>no corners cut.</em></h1>
+                    <p class="hero__sub">
+                        Painting, kitchen and bathroom remodels, finished basements, fences, and custom
+                        carpentry &mdash; handled start to finish by the same craftsman who answers the phone.
+                    </p>
+                    <div class="btn-row">
+                        <a class="btn btn--primary" href="tel:+18166458036">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path
+                                    d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2Z" />
+                            </svg>
+                            Call for a free estimate
+                        </a>
+                        <a class="btn btn--outline"
+                            href="mailto:Kenward.reid@gmail.com?subject=Project%20inquiry%20from%20kenwardreid.com">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="2" y="4" width="20" height="16" rx="2" />
+                                <path d="m2 7 10 6 10-6" />
+                            </svg>
+                            Email us
+                        </a>
                     </div>
+                    <ul class="hero__note">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M20 6 9 17l-5-5" />
+                            </svg>
+                            Free estimates
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M20 6 9 17l-5-5" />
+                            </svg>
+                            No obligation
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M20 6 9 17l-5-5" />
+                            </svg>
+                            Calls returned same day
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-md-4">
-                    <div class="service-card text-center">
-                        <i class="fas fa-home"></i>
+            </div>
+        </header>
+
+        <section class="trust" aria-label="Why homeowners choose us">
+            <div class="wrap">
+                <ul>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8L2 9.3l6.9-1L12 2Z" />
+                        </svg>
+                        5.0 average from local homeowners
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M20 6 9 17l-5-5" />
+                        </svg>
+                        Job site left clean, every time
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="12" cy="12" r="9" />
+                            <path d="M12 7v5l3.5 2" />
+                        </svg>
+                        Same-day callbacks
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M12 21s7-4.6 7-10a7 7 0 1 0-14 0c0 5.4 7 10 7 10Z" />
+                            <circle cx="12" cy="11" r="2.5" />
+                        </svg>
+                        Serving the greater Kansas City area
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" id="services">
+            <span class="aura aura--cyan" style="width:34rem;height:26rem;top:-6rem;right:-12rem"></span>
+            <div class="wrap" style="position:relative;z-index:1">
+                <div class="section__head section__head--center">
+                    <p class="eyebrow">What we do</p>
+                    <h2>One call covers the whole punch list</h2>
+                    <p class="lede">
+                        From a single wall that needs to come out to a full basement build&#8209;out &mdash; if it's part
+                        of your home, it's work we take on.
+                    </p>
+                </div>
+
+                <div class="grid grid--3">
+                    <article class="card service">
+                        <div class="service__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M4 4h13v6H4z" />
+                                <path d="M17 7h3v4h-6v3" />
+                                <rect x="11" y="14" width="6" height="8" rx="1.5" />
+                            </svg>
+                        </div>
+                        <h3>Interior &amp; Exterior Painting</h3>
+                        <p>Proper prep, clean lines, and full coverage &mdash; inside or out, trim to siding.</p>
+                    </article>
+
+                    <article class="card service">
+                        <div class="service__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="3" y="3" width="18" height="18" rx="2" />
+                                <path d="M3 9h18M9 3v6M7 14h4M7 17h4M15 13h3v5h-3z" />
+                            </svg>
+                        </div>
                         <h3>Kitchen Remodeling</h3>
-                        <p>Create your dream kitchen with our expert design and craftsmanship.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-card text-center">
-                        <i class="fas fa-bath"></i>
+                        <p>Cabinets, counters, backsplash, and fixtures &mdash; laid out and installed to spec.</p>
+                    </article>
+
+                    <article class="card service">
+                        <div class="service__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M3 12h18v4a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z" />
+                                <path d="M6 12V6a2.5 2.5 0 0 1 5 0" />
+                                <path d="M6 20l-1 2M18 20l1 2" />
+                            </svg>
+                        </div>
                         <h3>Bathroom Upgrades</h3>
-                        <p>Transform your bathroom into a luxurious and functional space.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="service-card text-center">
-                        <i class="fas fa-home"></i>
-                        <h3>Finish Basement</h3>
-                        <p>Complete basement remodel and furnishing.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-card text-center">
-                        <i class="fas fa-fence"></i>
+                        <p>Vanities, tile, tubs, and showers &mdash; from a refresh to a full gut and rebuild.</p>
+                    </article>
+
+                    <article class="card service">
+                        <div class="service__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M3 9h18v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" />
+                                <path d="M3 9 12 3l9 6M9 21v-7h6v7" />
+                            </svg>
+                        </div>
+                        <h3>Finished Basements</h3>
+                        <p>Framing, drywall, trim, and flooring &mdash; turning raw space into usable rooms.</p>
+                    </article>
+
+                    <article class="card service">
+                        <div class="service__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M5 21V7l2.5-3L10 7v14M14 21V7l2.5-3L19 7v14" />
+                                <path d="M2 11h20M2 16h20" />
+                            </svg>
+                        </div>
                         <h3>Fence Installation</h3>
-                        <p>Install a new fence or replace existing one.</p>
-                    </div>
+                        <p>New cedar and privacy fence, or tear&#8209;out and replacement of what's failing.</p>
+                    </article>
+
+                    <article class="card service">
+                        <div class="service__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M14 3l7 7-2.5 2.5L14 8z" />
+                                <path d="M12.5 9.5 4 18v3h3l8.5-8.5" />
+                            </svg>
+                        </div>
+                        <h3>Custom Carpentry</h3>
+                        <p>Built&#8209;ins, decks, trim work, and repairs measured and cut for your space.</p>
+                    </article>
                 </div>
-                <div class="col-md-4">
-                    <div class="service-card text-center">
-                        <i class="fas fa-home"></i>
-                        <h3>Carpentry</h3>
-                        <p>Custom carpentry.</p>
+            </div>
+        </section>
+
+        <section class="section section--raised" id="transformations">
+            <div class="wrap">
+                <div class="section__head section__head--center">
+                    <p class="eyebrow">Before &amp; after</p>
+                    <h2>Drag the handle to see the difference</h2>
+                </div>
+
+                <div class="grid grid--2">
+                    <div class="ba">
+                        <figure class="ba__figure" data-ba>
+                            <img src="before1.JPEG"
+                                alt="Front of a two-story home with gray siding and brown shutters before repainting"
+                                width="800" height="600" loading="lazy" decoding="async">
+                            <img class="ba__after" src="after1.JPEG"
+                                alt="The same home after repainting in green with crisp white trim and garage doors"
+                                width="640" height="480" loading="lazy" decoding="async">
+                            <span class="ba__tag ba__tag--before">Before</span>
+                            <span class="ba__tag ba__tag--after">After</span>
+                            <span class="ba__handle" aria-hidden="true"></span>
+                            <input class="ba__range" type="range" min="0" max="100" value="50" step="1"
+                                aria-label="Reveal the after photo of the exterior repaint">
+                        </figure>
+                        <div class="ba__caption">
+                            <h3>Exterior Repaint &mdash; Front</h3>
+                            <span>Siding, trim &amp; garage doors</span>
+                        </div>
+                    </div>
+
+                    <div class="ba">
+                        <figure class="ba__figure" data-ba>
+                            <img src="before2.JPEG"
+                                alt="Rear elevation of the same home in weathered gray siding before repainting"
+                                width="640" height="480" loading="lazy" decoding="async">
+                            <img class="ba__after" src="after2.JPEG"
+                                alt="The rear elevation after repainting in green with white trim" width="800"
+                                height="600" loading="lazy" decoding="async">
+                            <span class="ba__tag ba__tag--before">Before</span>
+                            <span class="ba__tag ba__tag--after">After</span>
+                            <span class="ba__handle" aria-hidden="true"></span>
+                            <input class="ba__range" type="range" min="0" max="100" value="50" step="1"
+                                aria-label="Reveal the after photo of the rear elevation repaint">
+                        </figure>
+                        <div class="ba__caption">
+                            <h3>Exterior Repaint &mdash; Rear</h3>
+                            <span>Siding, trim &amp; soffit</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-   <!-- Before and After Section -->
-<section class="before-after py-5 bg-light" id="before-after">
-    <div class="container">
-        <h2 class="section-title">Before & After Transformations</h2>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="before-after-card">
-                    <h3>Project 1: Paint</h3>
-                    <div class="before-after-slider" id="slider1">
-                        <img src="before1.JPEG" alt="Before - Kitchen" class="img-fluid before-image">
-                        <img src="after1.JPEG" alt="After - Kitchen" class="img-fluid after-image" style="display:none;">
-                    </div>
-                    <button class="btn btn-secondary mt-3" onclick="toggleImage('slider1')">Toggle Before/After</button>
+        <section class="section" id="work">
+            <span class="aura aura--lime" style="width:30rem;height:24rem;bottom:-4rem;left:-12rem"></span>
+            <div class="wrap" style="position:relative;z-index:1">
+                <div class="section__head section__head--center">
+                    <p class="eyebrow">Recent work</p>
+                    <h2>Finished projects around the metro</h2>
+                </div>
+
+                <div class="gallery">
+                    <figure>
+                        <img src="project1.jpg"
+                            alt="Half bath painted deep yellow with a pedestal sink, framed mirror, and white over-toilet storage cabinet"
+                            width="1417" height="1890" loading="lazy" decoding="async">
+                        <figcaption>Half bath &mdash; paint, pedestal sink &amp; storage</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="project2.jpg"
+                            alt="The same yellow half bath from the doorway, showing new towel bar, tissue holder, and wood-look flooring"
+                            width="1418" height="1890" loading="lazy" decoding="async">
+                        <figcaption>Half bath &mdash; fixtures &amp; flooring</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="project3.jpg"
+                            alt="Powder room in soft sage with a white vanity, quartz top, oval mirror, and chrome sconces"
+                            width="1146" height="1528" loading="lazy" decoding="async">
+                        <figcaption>Powder room &mdash; vanity, lighting &amp; tile</figcaption>
+                    </figure>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="before-after-card">
-                    <h3>Project 2: Paint</h3>
-                    <div class="before-after-slider" id="slider2">
-                        <img src="before2.JPEG" alt="Before - Bathroom" class="img-fluid before-image">
-                        <img src="after2.JPEG" alt="After - Bathroom" class="img-fluid after-image" style="display:none;">
-                    </div>
-                    <button class="btn btn-secondary mt-3" onclick="toggleImage('slider2')">Toggle Before/After</button>
+        </section>
+
+        <section class="section section--raised" id="reviews">
+            <div class="wrap">
+                <div class="section__head section__head--center">
+                    <p class="eyebrow">Reviews</p>
+                    <h2>What homeowners say</h2>
+                </div>
+
+                <div class="grid grid--2">
+                    <article class="card review">
+                        <div class="stars" role="img" aria-label="Rated 5 out of 5">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8L2 9.3l6.9-1L12 2Z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8L2 9.3l6.9-1L12 2Z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8L2 9.3l6.9-1L12 2Z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8L2 9.3l6.9-1L12 2Z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8L2 9.3l6.9-1L12 2Z"/></svg>
+                        </div>
+                        <blockquote>
+                            <p>We can't thank Kenward Handyman Services enough. We needed to have part of a wall removed
+                                with little to no notice. After giving them a call to inquire on their services, they
+                                quickly returned our call and scheduled to arrive the next morning. They did a great job
+                                with the project and left the area clean. We would definitely use them again.</p>
+                        </blockquote>
+                        <footer>
+                            <cite>Brittany Grim</cite>
+                            <time datetime="2024-07-15">July 15, 2024</time>
+                        </footer>
+                    </article>
+
+                    <article class="card review">
+                        <div class="stars" role="img" aria-label="Rated 5 out of 5">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8L2 9.3l6.9-1L12 2Z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8L2 9.3l6.9-1L12 2Z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8L2 9.3l6.9-1L12 2Z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8L2 9.3l6.9-1L12 2Z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8L2 9.3l6.9-1L12 2Z"/></svg>
+                        </div>
+                        <blockquote>
+                            <p>I am a very particular person and Kenward meets all my expectations! He will level,
+                                measure and have everything just right, no cutting corners! Kenward has done several
+                                jobs for me and I don't want to ever use anyone else. Not only is he the best handyman
+                                ever, he is also a great person! Such a blessing I found him on Google! Thank you for all
+                                your hard work Kenward!!</p>
+                        </blockquote>
+                        <footer>
+                            <cite>Ranell Cochran</cite>
+                            <time datetime="2023-09-22">September 22, 2023</time>
+                        </footer>
+                    </article>
+
+                    <article class="card review">
+                        <div class="stars" role="img" aria-label="Rated 5 out of 5">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8L2 9.3l6.9-1L12 2Z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8L2 9.3l6.9-1L12 2Z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8L2 9.3l6.9-1L12 2Z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8L2 9.3l6.9-1L12 2Z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8L2 9.3l6.9-1L12 2Z"/></svg>
+                        </div>
+                        <blockquote>
+                            <p>Kenward removed an old fence and put in a new cedar privacy fence for me. It looks
+                                amazing. He did such a good job I will be using him to replace a deck next year. Highly
+                                recommend!!!</p>
+                        </blockquote>
+                        <footer>
+                            <cite>Todd Fuselier</cite>
+                            <time datetime="2023-09-22">September 22, 2023</time>
+                        </footer>
+                    </article>
+
+                    <article class="card review">
+                        <div class="stars" role="img" aria-label="Rated 5 out of 5">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8L2 9.3l6.9-1L12 2Z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8L2 9.3l6.9-1L12 2Z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8L2 9.3l6.9-1L12 2Z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8L2 9.3l6.9-1L12 2Z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8L2 9.3l6.9-1L12 2Z"/></svg>
+                        </div>
+                        <blockquote>
+                            <p>Kenward does an awesome job. We use him for our rentals and home projects.</p>
+                        </blockquote>
+                        <footer>
+                            <cite>Dale Falck</cite>
+                            <time datetime="2023-09-22">September 22, 2023</time>
+                        </footer>
+                    </article>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio py-5 bg-light">
-        <div class="container">
-            <h2 class="section-title">Our Recent Projects</h2>
-            <div id="portfolioCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="project1.jpg" alt="Project 1" class="d-block w-100 rounded">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="project2.jpg" alt="Project 2" class="d-block w-100 rounded">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="project3.jpg" alt="Project 3" class="d-block w-100 rounded">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials py-5">
-        <div class="container">
-            <h2 class="section-title">What Our Clients Say</h2>
-            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="testimonial text-center">
-                            <p>"We can’t thank Kenward Handyman Services enough.  We needed to have part of a wall removed with little to no notice.  After giving them a call to inquire on their services, they quickly returned our call and scheduled to arrive the next morning.  They did a great job with the project and left the area clean.  We would definitely use them again."</p>
-                            <div class="star-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <h5>Brittany Grim.</h5>
-                            <small class="text-muted">July 15, 2024</small>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="testimonial text-center">
-                            <p>"Kenward does an awesome job.  We use him for are rentals and home projects."</p>
-                            <div class="star-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <h5>Dale Falck.</h5>
-                            <small class="text-muted">September 22, 2023</small>
-                        </div>
-                    </div>
-
-                     <div class="carousel-item">
-                        <div class="testimonial text-center">
-                            <p>"I am a very particular person and Kenward meets all my expectations! He will level, measure and have everything just right, no cutting corners! Kenward has done several jobs for me and I don’t want to ever use anyone else. Not only is he is the best handyman ever, he is also a great person! Such a blessing I found him on Google! Thank You for all your hard work Kenward!!"</p>
-                            <div class="star-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <h5>Ranell Cochran.</h5>
-                            <small class="text-muted">September 22, 2023</small>
-                        </div>
-                    </div>
-
-                     <div class="carousel-item">
-                        <div class="testimonial text-center">
-                            <p>"Kenward removed an old fence and put in a new cedar privacy fence for me.  It looks amazing.  He did such a good job I will be using him to replace a deck next year.   Highly recommend!!!"</p>
-                            <div class="star-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <h5>Todd Fuselier.</h5>
-                            <small class="text-muted">September 22, 2023</small>
-                        </div>
-                    </div>
-
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2 class="section-title text-white">Ready to Start Your Next Project?</h2>
-            <a href="#contact" class="btn btn-custom btn-lg mt-4">Get a Free Quote</a>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section id="team" class="team-section py-5">
-        <div class="container">
-            <h2 class="section-title">Meet Our Team</h2>
-            <div class="row">
-                <div class="col-sm">
-                    <div class="team-member">
-                        <img src="Handyman.jpg" alt="Kenward Reid">
-                        <h4>Kenward Reid</h4>
-                        <p>Founder & Lead Craftsman</p>
+        <section class="section" id="about">
+            <span class="aura aura--cyan" style="width:32rem;height:24rem;top:2rem;right:-14rem"></span>
+            <div class="wrap about">
+                <img class="about__logo" src="logo.png"
+                    alt="Kenward Handyman and Remodeling LLC logo" width="1600" height="715" loading="lazy"
+                    decoding="async">
+                <div>
+                    <p class="eyebrow">About</p>
+                    <h2>You hire the craftsman, not a call center</h2>
+                    <p>
+                        Kenward Reid is the founder and lead craftsman &mdash; the person who takes your call, walks the
+                        job, gives the estimate, and does the work. No rotating crews, no handoffs, no surprises on the
+                        invoice.
+                    </p>
+                    <p>
+                        Projects run from full home renovations down to a single afternoon repair. Whatever the size,
+                        the standard is the same: measured, leveled, finished, and the site cleaned up before we leave.
+                    </p>
+                    <div class="btn-row" style="margin-top:1.875rem">
+                        <a class="btn btn--outline" href="tel:+18166458036">Talk to Kenward</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Us Form -->
-    <section id="contact" class="contact-us py-5 bg-light">
-        <div class="container">
-            <h2 class="section-title">Contact Us</h2>
-            <form>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="phone" class="form-label">Phone</label>
-                            <input type="text" class="form-control" id="phone">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea class="form-control" id="message" rows="6" required></textarea>
-                        </div>
-                    </div>
+        <section class="cta" id="contact" aria-labelledby="cta-title">
+            <span class="aura aura--lime" style="width:40rem;height:22rem;top:-6rem;left:50%;translate:-50% 0"></span>
+            <div class="wrap cta__inner">
+                <p class="eyebrow">Get started</p>
+                <h2 id="cta-title">Ready to start your project?</h2>
+                <p>Call or email for a free, no&#8209;obligation estimate. Tell us what you're working on and we'll tell
+                    you what it takes.</p>
+                <div class="btn-row btn-row--center">
+                    <a class="btn btn--primary" href="tel:+18166458036">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path
+                                d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2Z" />
+                        </svg>
+                        (816) 645-8036
+                    </a>
+                    <a class="btn btn--outline"
+                        href="mailto:Kenward.reid@gmail.com?subject=Project%20inquiry%20from%20kenwardreid.com">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <rect x="2" y="4" width="20" height="16" rx="2" />
+                            <path d="m2 7 10 6 10-6" />
+                        </svg>
+                        Kenward.reid@gmail.com
+                    </a>
                 </div>
-                <button type="submit" class="btn btn-custom">Send Message</button>
-            </form>
-        </div>
-    </section>
+            </div>
+        </section>
+    </main>
 
-    <!-- Footer Section -->
     <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h4>Contact Us</h4>
-                    <p>Email: Kenward.reid@gmail.com</p>
-                    <p>Phone: +1 (816) 645-8036</p>
-                    <p>Address: 123 Main Street, Kansas City, MO</p>
+        <div class="wrap">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <img src="logo.png" alt="" width="1600" height="715" loading="lazy">
+                    <p>Remodeling, repair, and carpentry for the Kansas City metro.</p>
                 </div>
-                <div class="col-md-6 text-end">
-                    <h4>Follow Us</h4>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>
+
+                <div>
+                    <h2>Get in touch</h2>
+                    <ul>
+                        <li><a href="tel:+18166458036">(816) 645-8036</a></li>
+                        <li><a href="mailto:Kenward.reid@gmail.com">Kenward.reid@gmail.com</a></li>
+                        <li>Serving the greater Kansas City area</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2>Services</h2>
+                    <ul>
+                        <li><a href="#services">Painting</a></li>
+                        <li><a href="#services">Kitchens &amp; bathrooms</a></li>
+                        <li><a href="#services">Basements</a></li>
+                        <li><a href="#services">Fences &amp; carpentry</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="text-center mt-4">
-                <p>&copy; 2024 Kenward Reid. All rights reserved.</p>
+
+            <div class="footer__bottom">
+                <p>&copy; <span id="year">2026</span> Kenward Handyman &amp; Remodeling LLC. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-<script>
-    function toggleImage(sliderId) {
-        var slider = document.getElementById(sliderId);
-        var beforeImage = slider.querySelector('.before-image');
-        var afterImage = slider.querySelector('.after-image');
-    
-        if (beforeImage.style.display === "none") {
-            beforeImage.style.display = "block";
-            afterImage.style.display = "none";
-        } else {
-            beforeImage.style.display = "none";
-            afterImage.style.display = "block";
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HomeAndConstructionBusiness",
+      "@id": "https://www.kenwardreid.com/#business",
+      "name": "Kenward Handyman & Remodeling LLC",
+      "legalName": "Kenward Handyman & Remodeling LLC",
+      "url": "https://www.kenwardreid.com/",
+      "image": "https://www.kenwardreid.com/logo.png",
+      "logo": "https://www.kenwardreid.com/logo.png",
+      "telephone": "+1-816-645-8036",
+      "email": "Kenward.reid@gmail.com",
+      "founder": { "@type": "Person", "name": "Kenward Reid" },
+      "areaServed": { "@type": "City", "name": "Kansas City", "containedInPlace": { "@type": "State", "name": "Missouri" } },
+      "priceRange": "$$",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Home repair and remodeling services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Interior & Exterior Painting" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Kitchen Remodeling" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bathroom Upgrades" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Basement Finishing" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fence Installation" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Carpentry" } }
+        ]
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "reviewCount": "4"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "author": { "@type": "Person", "name": "Brittany Grim" },
+          "datePublished": "2024-07-15",
+          "reviewBody": "We needed part of a wall removed with little to no notice. They quickly returned our call and arrived the next morning. Great job, and they left the area clean."
+        },
+        {
+          "@type": "Review",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "author": { "@type": "Person", "name": "Ranell Cochran" },
+          "datePublished": "2023-09-22",
+          "reviewBody": "He will level, measure and have everything just right, no cutting corners. Kenward has done several jobs for me and I don't want to use anyone else."
+        },
+        {
+          "@type": "Review",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "author": { "@type": "Person", "name": "Todd Fuselier" },
+          "datePublished": "2023-09-22",
+          "reviewBody": "Kenward removed an old fence and put in a new cedar privacy fence. It looks amazing. Highly recommend."
+        },
+        {
+          "@type": "Review",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "author": { "@type": "Person", "name": "Dale Falck" },
+          "datePublished": "2023-09-22",
+          "reviewBody": "Kenward does an awesome job. We use him for our rentals and home projects."
         }
+      ]
     }
-</script>
+    </script>
+
+    <script>
+        (function () {
+            'use strict';
+
+            // Mobile nav
+            var toggle = document.querySelector('.nav__toggle');
+            var menu = document.getElementById('nav-menu');
+
+            if (toggle && menu) {
+                toggle.addEventListener('click', function () {
+                    var open = toggle.getAttribute('aria-expanded') === 'true';
+                    toggle.setAttribute('aria-expanded', String(!open));
+                    if (open) {
+                        menu.removeAttribute('data-open');
+                    } else {
+                        menu.setAttribute('data-open', '');
+                    }
+                });
+
+                // Collapse after picking a destination
+                menu.addEventListener('click', function (e) {
+                    if (e.target.closest('a')) {
+                        toggle.setAttribute('aria-expanded', 'false');
+                        menu.removeAttribute('data-open');
+                    }
+                });
+            }
+
+            // Before/after reveal. The range input owns the value, so drag,
+            // keyboard, and assistive tech all work without extra handling.
+            document.querySelectorAll('[data-ba]').forEach(function (figure) {
+                var range = figure.querySelector('.ba__range');
+                if (!range) return;
+
+                var paint = function () {
+                    figure.style.setProperty('--pos', range.value + '%');
+                };
+
+                range.addEventListener('input', paint);
+                paint();
+            });
+
+            // Keep the copyright honest without editing the file each January
+            var year = document.getElementById('year');
+            if (year) year.textContent = new Date().getFullYear();
+        })();
+    </script>
+</body>
 
 </html>
