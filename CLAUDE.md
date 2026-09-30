@@ -14,7 +14,7 @@ KTech standards (CLAUDE.md, UI.md in ktech-standards) apply. This file covers wh
 - **What it does:** Marketing site for Kenward Handyman & Remodeling LLC (Kansas City home repair).
 - **Tier:** S
 - **Status:** live
-- **Domains:** www.kenwardreid.com; every branch/PR also gets a Cloudflare Pages preview URL (linked from the PR's "Cloudflare Pages" check)
+- **Domains:** www.kenwardreid.com (canonical) and kenwardreid.com, both attached as custom domains on the Cloudflare Pages project (Workers & Pages → kenwardreid → Custom domains). Every branch/PR also gets a Cloudflare Pages preview URL (linked from the PR's "Cloudflare Pages" check).
 - **Users:** public visitors; no accounts, no forms, no personal data collected. Contact is by `tel:`/`mailto:` links only.
 
 ## Deployable units
@@ -44,6 +44,7 @@ CI (`.github/workflows/ci.yml`): gitleaks secret scan, HTML validation, local li
 - Content changes (wording, services, prices, photos) need the client's approval.
 
 ## Rollback
+- If a hostname stops resolving, check Custom domains first: both `www.kenwardreid.com` and `kenwardreid.com` must be listed and Active (see the 2026-09-30 incident note in ktech-standards).
 - Pages: Cloudflare dashboard → Workers & Pages → `kenwardreid` → Deployments → Rollback.
 - Or revert the commit on `main` and push.
 
@@ -55,7 +56,7 @@ CI (`.github/workflows/ci.yml`): gitleaks secret scan, HTML validation, local li
 ## Known issues
 1. The open mobile menu squeezes beside the logo at 375px and the phone number wraps onto three lines (pre-existing; see DESIGN.md).
 2. The repo is public while KTech repos default to private; the owner decides whether to make it private (Cloudflare Pages works either way).
-3. The `CNAME` file is left over from GitHub Pages hosting. Confirm GitHub Pages is switched off (repo Settings → Pages), then it can be deleted.
+3. Both hostnames serve the same page; the canonical tag points to www. A Cloudflare redirect from kenwardreid.com to www is optional.
 
 ## Deviations from KTech standards
 - Dark mode only (UI.md §6): the brand colors fail contrast on light backgrounds. Recorded in DESIGN.md.
