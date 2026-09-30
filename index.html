@@ -22,6 +22,7 @@
 
     <link rel="icon" href="favicon.png" type="image/png" sizes="512x512">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
     <link rel="preload" as="image" href="after1.JPEG" fetchpriority="high">
 
     <style>
@@ -1261,19 +1262,19 @@
                     <figure>
                         <img src="project1.jpg"
                             alt="Half bath painted deep yellow with a pedestal sink, framed mirror, and white over-toilet storage cabinet"
-                            width="1417" height="1890" loading="lazy" decoding="async">
+                            width="900" height="1200" loading="lazy" decoding="async">
                         <figcaption>Half bath &mdash; paint, pedestal sink &amp; storage</figcaption>
                     </figure>
                     <figure>
                         <img src="project2.jpg"
                             alt="The same yellow half bath from the doorway, showing new towel bar, tissue holder, and wood-look flooring"
-                            width="1418" height="1890" loading="lazy" decoding="async">
+                            width="900" height="1200" loading="lazy" decoding="async">
                         <figcaption>Half bath &mdash; fixtures &amp; flooring</figcaption>
                     </figure>
                     <figure>
                         <img src="project3.jpg"
                             alt="Powder room in soft sage with a white vanity, quartz top, oval mirror, and chrome sconces"
-                            width="1146" height="1528" loading="lazy" decoding="async">
+                            width="900" height="1200" loading="lazy" decoding="async">
                         <figcaption>Powder room &mdash; vanity, lighting &amp; tile</figcaption>
                     </figure>
                 </div>
@@ -1372,7 +1373,7 @@
             <span class="aura aura--cyan" style="width:32rem;height:24rem;top:2rem;right:-14rem"></span>
             <div class="wrap about">
                 <img class="about__logo" src="logo.png"
-                    alt="Kenward Handyman and Remodeling LLC logo" width="1600" height="715" loading="lazy"
+                    alt="Kenward Handyman and Remodeling LLC logo" width="1200" height="536" loading="lazy"
                     decoding="async">
                 <div>
                     <p class="eyebrow">About</p>
@@ -1427,7 +1428,7 @@
         <div class="wrap">
             <div class="footer__top">
                 <div class="footer__brand">
-                    <img src="logo.png" alt="" width="1600" height="715" loading="lazy">
+                    <img src="logo.png" alt="" width="1200" height="536" loading="lazy">
                     <p>Remodeling, repair, and carpentry for the Kansas City metro.</p>
                 </div>
 
@@ -1523,53 +1524,7 @@
     }
     </script>
 
-    <script>
-        (function () {
-            'use strict';
-
-            // Mobile nav
-            var toggle = document.querySelector('.nav__toggle');
-            var menu = document.getElementById('nav-menu');
-
-            if (toggle && menu) {
-                toggle.addEventListener('click', function () {
-                    var open = toggle.getAttribute('aria-expanded') === 'true';
-                    toggle.setAttribute('aria-expanded', String(!open));
-                    if (open) {
-                        menu.removeAttribute('data-open');
-                    } else {
-                        menu.setAttribute('data-open', '');
-                    }
-                });
-
-                // Collapse after picking a destination
-                menu.addEventListener('click', function (e) {
-                    if (e.target.closest('a')) {
-                        toggle.setAttribute('aria-expanded', 'false');
-                        menu.removeAttribute('data-open');
-                    }
-                });
-            }
-
-            // Before/after reveal. The range input owns the value, so drag,
-            // keyboard, and assistive tech all work without extra handling.
-            document.querySelectorAll('[data-ba]').forEach(function (figure) {
-                var range = figure.querySelector('.ba__range');
-                if (!range) return;
-
-                var paint = function () {
-                    figure.style.setProperty('--pos', range.value + '%');
-                };
-
-                range.addEventListener('input', paint);
-                paint();
-            });
-
-            // Keep the copyright honest without editing the file each January
-            var year = document.getElementById('year');
-            if (year) year.textContent = new Date().getFullYear();
-        })();
-    </script>
+    <script src="js/site.js"></script>
 </body>
 
 </html>

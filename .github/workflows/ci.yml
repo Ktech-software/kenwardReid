@@ -1,0 +1,34 @@
+# CI for Tier S (static) sites: secret scan and HTML/link checks.
+# No npm project needed.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+
+      - name: Secret scan (gitleaks, pinned)
+        run: |
+          docker run --rm -v "$PWD:/repo" -w /repo zricethezav/gitleaks:v8.30.1 \
+            git /repo --no-banner --redact --verbose --exit-code 1
+
+      - uses: actions/setup-node@v7.0.0
+        with:
+          node-version: 24
+
+      - name: HTML validation
+        run: npx --yes html-validate@9 "**/*.html"
+
+      - name: Local links and assets exist
+        run: npx --yes linkinator@6 . --recurse --skip "^(?!http://localhost)"

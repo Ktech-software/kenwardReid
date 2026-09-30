@@ -1,0 +1,37 @@
+# Tripwire for GitHub Free (no branch protection on private repos): fails, and
+# GitHub emails the owner, when a commit lands on main without a merged PR.
+# See ktech-standards CLAUDE.md §5.
+name: Main guard
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  came-from-a-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check every pushed commit belongs to a merged PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+        run: |
+          # The head commit of a PR merge (merge or squash) is linked to that PR.
+          # GitHub can take a few seconds to link it, so retry briefly.
+          prs=0
+          for i in 1 2 3 4; do
+            prs=$(gh api "repos/$REPO/commits/$AFTER/pulls" --jq '[.[] | select(.merged_at != null)] | length')
+            [ "$prs" -gt 0 ] && break
+            sleep 15
+          done
+          if [ "$prs" -eq 0 ]; then
+            echo "::error::Commit $AFTER was pushed to main without a merged pull request. Check what landed and revert or open a PR for it."
+            exit 1
+          fi
+          echo "OK: $AFTER came from a merged pull request."

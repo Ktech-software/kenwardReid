@@ -1,0 +1,26 @@
+# Secrets (never commit). This site has none, but the rule is the same everywhere.
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+
+# Tooling output
+node_modules/
+.wrangler/
+dist/
+
+# Local Claude Code settings (per machine)
+.claude/settings.local.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.log

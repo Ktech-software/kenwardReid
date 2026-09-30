@@ -1,0 +1,24 @@
+# Security headers for every page (KTech standards §6.4, Tier S baseline).
+# script-src is 'self' only: all behaviour lives in js/site.js. The JSON-LD
+# block is data, not script, so CSP doesn't apply to it. Inline styles are
+# allowed because the page's CSS is in a <style> block.
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self'; connect-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'
+  Strict-Transport-Security: max-age=31536000
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  X-Frame-Options: DENY
+
+# Repo files that are published but aren't part of the site: don't index them.
+/CLAUDE.md
+  X-Robots-Tag: noindex
+/README.md
+  X-Robots-Tag: noindex
+
+# pages.dev hosts (production alias and PR previews) must not be indexed.
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex, nofollow
+
+https://:version.:project.pages.dev/*
+  X-Robots-Tag: noindex, nofollow

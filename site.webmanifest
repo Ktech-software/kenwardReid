@@ -1,0 +1,12 @@
+{
+  "name": "Kenward Handyman & Remodeling LLC",
+  "short_name": "Kenward",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#0b0d0f",
+  "theme_color": "#0b0d0f",
+  "icons": [
+    { "src": "/favicon.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/apple-touch-icon.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
